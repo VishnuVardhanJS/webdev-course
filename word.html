@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./word.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #35155d;
+        }
+
+        textarea {
+            margin: 20px;
+            outline: 0;
+            padding: 5px;
+            /* border: none;
+            resize: none; */
+        }
+
+        button {
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 100px;
+            background-color: #4c43cd;
+            background-image: radial-gradient(93% 87% at 87% 89%,
+                    rgba(0, 0, 0, 0.23) 0%,
+                    transparent 86.18%),
+                radial-gradient(66% 87% at 26% 20%,
+                    rgba(255, 255, 255, 0.41) 0%,
+                    rgba(255, 255, 255, 0) 69.79%,
+                    rgba(255, 255, 255, 0) 100%);
+            box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 16px;
+
+            border: 0;
+
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+
+            cursor: pointer;
+        }
+
+        h1 {
+            padding: 15px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea placeholder="Enter the words" id="text" cols="30" rows="8"></textarea>
+    <button id="word" onclick="WordCount()">calculate the words</button>
+    <h1 id="wordget"></h1>
+    <script>
+
+        function WordCount() {
+            let text = document.getElementById('text').value;
+            document.getElementById('wordget').innerHTML = text.split(" ").length;
+        }
+    </script>
+</body>
+
+</html>

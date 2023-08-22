@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #35155d;
+        color: aliceblue;
+      }
+      .input-container {
+        display: flex;
+        gap: 2rem;
+      }
+      .main-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .options {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .login-button {
+        color: #fff;
+        padding: 15px 25px;
+        border-radius: 100px;
+        background-color: #4c43cd;
+        background-image: radial-gradient(
+            93% 87% at 87% 89%,
+            rgba(0, 0, 0, 0.23) 0%,
+            transparent 86.18%
+          ),
+          radial-gradient(
+            66% 87% at 26% 20%,
+            rgba(255, 255, 255, 0.41) 0%,
+            rgba(255, 255, 255, 0) 69.79%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        font-size: 16px;
+
+        border: 0;
+
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        cursor: pointer;
+      }
+
+      h1{
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="input-container">
+        <input id="num1" type="number" />
+        <input id="num2" type="number" />
+      </div>
+      <div class="options">
+        <form id="test">
+          <label><input type="radio" name="test" value="+" checked /> add</label>
+          <label><input type="radio" name="test" value="-" /> subtract</label>
+          <label><input type="radio" name="test" value="*" /> multiply</label>
+          <label><input type="radio" name="test" value="/" /> divide</label>
+        </form>
+      </div>
+      <button onclick="clicking()" class="login-button">Get Result</button>
+      <h1 id="answer"></h1>
+
+    </div>
+    <script>
+      function clicking() {
+        var form = document.getElementById("test");
+        var num1 = document.getElementById("num1").valueAsNumber;
+        var num2 = document.getElementById("num2").valueAsNumber;
+        if (form.elements["test"].value == "+") {
+          document.getElementById("answer").innerHTML = num1 + num2;
+        }
+        if (form.elements["test"].value == "-") {
+          document.getElementById("answer").innerHTML = num1 - num2;
+        }
+        if (form.elements["test"].value == "*") {
+          document.getElementById("answer").innerHTML = num1 * num2;
+        }
+        if (form.elements["test"].value == "/") {
+          document.getElementById("answer").innerHTML = num1/num2;
+        }
+      }
+    </script>
+  </body>
+</html>
